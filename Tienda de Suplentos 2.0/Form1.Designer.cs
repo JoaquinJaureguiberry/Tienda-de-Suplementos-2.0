@@ -126,16 +126,17 @@
             // dgvLista
             // 
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(406, 68);
+            this.dgvLista.Location = new System.Drawing.Point(388, 86);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.Size = new System.Drawing.Size(385, 242);
             this.dgvLista.TabIndex = 9;
+            this.dgvLista.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 450);
+            this.ClientSize = new System.Drawing.Size(816, 450);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCodigo);

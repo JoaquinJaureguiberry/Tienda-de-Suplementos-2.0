@@ -11,15 +11,18 @@ using System.Windows.Forms;
 
 namespace Tienda_de_Suplentos_2._0
 {
+  
     public partial class Form1 : Form
     {
+        public ListaSuplementos Lista { get; set; } = new ListaSuplementos();
+
         public Form1()
         {
             InitializeComponent();
+
+            dgvLista.DataSource = Lista.DT;
         }
 
-       
-        public ListaSuplementos Lista { get; set; } = new ListaSuplementos();
 
         private void btCargar_Click(object sender, EventArgs e)
         {

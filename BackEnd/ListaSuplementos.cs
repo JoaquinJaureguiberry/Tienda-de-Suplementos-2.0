@@ -1,29 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BackEnd
 {
-    //public DataTable DT = new DataTable();
-
-
-
-    public class Suplemento
-    {
-        public string Codigo { get; set; }
-
-        public string Producto { get; set; }
-
-        public int Precio { get; set; }
-
-    }
-
     public class ListaSuplementos
     {
+        public DataTable DT = new DataTable();
+
         public Suplemento[] Suplementos { get; set; }
+
+
+        public ListaSuplementos()
+        {
+
+            DT.TableName = "Lista de Suplementos";
+            DT.Columns.Add("Codigo");
+            DT.Columns.Add("Producto");
+            DT.Columns.Add("Precio");
+
+            LeerDT_DeArchivo();
+        }
+
+        public void LeerDT_DeArchivo()
+        {
+            if (File.Exists("Lista.xml"))
+            {
+                DT.Clear();
+                DT.ReadXml("Lista.xml");
+                
+            }
+
+        }
+
+
 
         public void Redimensionar()
         {
@@ -51,8 +65,15 @@ namespace BackEnd
             suplementos.Codigo = cod;
             suplementos.Producto = prod;
             suplementos.Precio = Convert.ToInt16(prec);
-            Redimensionar();
-            Suplementos[Suplementos.Length - 1] = suplementos;
+
+            DT.Rows.Add();
+            int n = DT.Rows.Count - 1;
+
+            DT.Rows[n]["Codigo"] = suplementos.Codigo;
+            DT.Rows[n]["Producto"] = suplementos.Producto;
+            DT.Rows[n]["Precio"] = "$" + suplementos.Precio.ToString();
+
+            DT.WriteXml("Lista.xml");
 
         }
 
@@ -68,7 +89,6 @@ namespace BackEnd
 
             return resp;
         }
-        
-    }
 
+    }
 }
