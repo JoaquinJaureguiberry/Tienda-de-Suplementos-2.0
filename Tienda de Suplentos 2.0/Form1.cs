@@ -28,11 +28,23 @@ namespace Tienda_de_Suplentos_2._0
         {
             if (txtCodigo.Text != "" && txtProducto.Text != "" && txtPrecio.Text != "")
             {
-                Lista.Agregar(txtCodigo.Text, txtProducto.Text, txtPrecio.Text);
-                txtProducto.Text = "";
-                txtPrecio.Text = "";
-                txtCodigo.Text = "";
-                txtCodigo.Focus();
+                if (int.TryParse(txtPrecio.Text,out int n))
+                {
+                    Lista.Agregar(txtCodigo.Text, txtProducto.Text, txtPrecio.Text);
+                    lblError.Text = "El dato del Codigo " + txtCodigo.Text + " se cargo correctamente.";
+                    txtProducto.Text = "";
+                    txtPrecio.Text = "";
+                    txtCodigo.Text = "";
+                    txtCodigo.Focus();
+                }
+                else
+                {
+                    lblError.Text = "El campo -Precio- no es un numero entero.";
+                }               
+            }
+            else
+            {
+                lblError.Text = "Algunos de los campos se encuantra vacio.";
             }
 
         }
@@ -41,7 +53,7 @@ namespace Tienda_de_Suplentos_2._0
         {
             if (Lista.Suplementos != null)
             {
-                lblLista.Text = Lista.Arreglo();
+                lblError.Text = Lista.Arreglo();
             }
             
         }

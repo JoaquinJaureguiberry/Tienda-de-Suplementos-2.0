@@ -30,7 +30,7 @@
         {
             this.btCargar = new System.Windows.Forms.Button();
             this.txtProducto = new System.Windows.Forms.TextBox();
-            this.lblLista = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btMostrar = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
@@ -58,16 +58,16 @@
             this.txtProducto.Size = new System.Drawing.Size(100, 20);
             this.txtProducto.TabIndex = 1;
             // 
-            // lblLista
+            // lblError
             // 
-            this.lblLista.AutoSize = true;
-            this.lblLista.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLista.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLista.Location = new System.Drawing.Point(12, 119);
-            this.lblLista.Name = "lblLista";
-            this.lblLista.Size = new System.Drawing.Size(2, 19);
-            this.lblLista.TabIndex = 2;
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblError.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(12, 119);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(2, 19);
+            this.lblError.TabIndex = 2;
             // 
             // label1
             // 
@@ -81,6 +81,7 @@
             // 
             // btMostrar
             // 
+            this.btMostrar.Enabled = false;
             this.btMostrar.Location = new System.Drawing.Point(93, 12);
             this.btMostrar.Name = "btMostrar";
             this.btMostrar.Size = new System.Drawing.Size(75, 23);
@@ -125,10 +126,11 @@
             // 
             // dgvLista
             // 
+            this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(388, 86);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(385, 242);
+            this.dgvLista.Size = new System.Drawing.Size(416, 242);
             this.dgvLista.TabIndex = 9;
             this.dgvLista.TabStop = false;
             // 
@@ -144,7 +146,7 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.btMostrar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblLista);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.btCargar);
             this.Name = "Form1";
@@ -159,7 +161,7 @@
 
         private System.Windows.Forms.Button btCargar;
         private System.Windows.Forms.TextBox txtProducto;
-        private System.Windows.Forms.Label lblLista;
+        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btMostrar;
         private System.Windows.Forms.TextBox txtPrecio;
