@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "Tienda de Suplentos 2.0\FrontEnd.csproj", "{B4568DA2-7997-4687-B743-ED9DC8346425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackEnd", "BackEnd\BackEnd.csproj", "{D49ABBED-680E-4131-AE64-201170B681D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4568DA2-7997-4687-B743-ED9DC8346425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4568DA2-7997-4687-B743-ED9DC8346425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4568DA2-7997-4687-B743-ED9DC8346425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4568DA2-7997-4687-B743-ED9DC8346425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D49ABBED-680E-4131-AE64-201170B681D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49ABBED-680E-4131-AE64-201170B681D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49ABBED-680E-4131-AE64-201170B681D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49ABBED-680E-4131-AE64-201170B681D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA5BE3EF-7BBD-42CB-A041-13947AED3060}
+	EndGlobalSection
+EndGlobal
