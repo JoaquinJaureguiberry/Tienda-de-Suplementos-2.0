@@ -71,7 +71,7 @@ namespace BackEnd
 
             DT.Rows[n]["Codigo"] = suplementos.Codigo;
             DT.Rows[n]["Producto"] = suplementos.Producto;
-            DT.Rows[n]["Precio"] = "$" + suplementos.Precio.ToString();
+            DT.Rows[n]["Precio"] = suplementos.Precio.ToString();
 
             DT.WriteXml("Lista.xml");
 
@@ -88,6 +88,26 @@ namespace BackEnd
             }
 
             return resp;
+        }
+
+        public Suplemento Buscar(string cod)
+        {
+            Suplemento suplemento = new Suplemento();
+            //DataRow[] fila = DT.Select("Precio=" + cod.ToString());
+
+            for (int i = 0; i < DT.Rows.Count; i++)
+            {
+                if (Convert.ToString(DT.Rows[i]["Codigo"]) == cod)
+                {
+                    suplemento.Codigo = (string)DT.Rows[i]["Codigo"];
+                    suplemento.Producto = (string)DT.Rows[i]["Producto"];
+                    suplemento.Precio = (int)DT.Rows[i]["Precio"];
+                    break;
+                }
+            }
+
+           
+            return suplemento;
         }
 
     }

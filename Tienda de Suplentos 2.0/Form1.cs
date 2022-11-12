@@ -12,17 +12,19 @@ using System.Windows.Forms;
 namespace Tienda_de_Suplentos_2._0
 {
   
-    public partial class Form1 : Form
+    public partial class Formulario1 : Form
     {
         public ListaSuplementos Lista { get; set; } = new ListaSuplementos();
 
-        public Form1()
+        
+
+        public Formulario1()
         {
             InitializeComponent();
-
             dgvLista.DataSource = Lista.DT;
         }
 
+        
 
         private void btCargar_Click(object sender, EventArgs e)
         {
@@ -57,6 +59,13 @@ namespace Tienda_de_Suplentos_2._0
             }
             
         }
-        
+
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            Suplemento Suplementos = Lista.Buscar(txtBuscar.Text);
+            lblError.Text = Suplementos.Codigo + " - "
+                + Suplementos.Producto + " - $"
+                + Convert.ToString(Suplementos.Precio) + "\r\n";
+        }
     }
 }

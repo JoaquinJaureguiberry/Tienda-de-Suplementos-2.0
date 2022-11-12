@@ -1,6 +1,6 @@
 ﻿namespace Tienda_de_Suplentos_2._0
 {
-    partial class Form1
+    partial class Formulario1
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -38,6 +38,9 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.lblDivision = new System.Windows.Forms.Label();
+            this.btBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,17 +131,45 @@
             // 
             this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(388, 86);
+            this.dgvLista.Location = new System.Drawing.Point(366, 139);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.Size = new System.Drawing.Size(416, 242);
             this.dgvLista.TabIndex = 9;
             this.dgvLista.TabStop = false;
             // 
-            // Form1
+            // lblDivision
+            // 
+            this.lblDivision.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDivision.Location = new System.Drawing.Point(350, -2);
+            this.lblDivision.Name = "lblDivision";
+            this.lblDivision.Size = new System.Drawing.Size(1, 500);
+            this.lblDivision.TabIndex = 10;
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.Location = new System.Drawing.Point(366, 12);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btBuscar.TabIndex = 11;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(447, 15);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.TabIndex = 12;
+            // 
+            // Formulario1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 450);
+            this.ClientSize = new System.Drawing.Size(816, 461);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btBuscar);
+            this.Controls.Add(this.lblDivision);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCodigo);
@@ -149,7 +180,7 @@
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.btCargar);
-            this.Name = "Form1";
+            this.Name = "Formulario1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
@@ -169,6 +200,9 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.Label lblDivision;
+        private System.Windows.Forms.Button btBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }
 
