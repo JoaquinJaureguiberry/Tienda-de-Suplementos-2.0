@@ -46,7 +46,7 @@ namespace Tienda_de_Suplentos_2._0
             }
             else
             {
-                lblError.Text = "Algunos de los campos se encuantra vacio.";
+                lblError.Text = "Algunos de los campos se encuentra vacio.";
             }
 
         }
@@ -63,9 +63,20 @@ namespace Tienda_de_Suplentos_2._0
         private void btBuscar_Click(object sender, EventArgs e)
         {
             Suplemento Suplementos = Lista.Buscar(txtBuscar.Text);
-            lblError.Text = Suplementos.Codigo + " - "
+           // lblError.Text = Suplementos.Codigo + " - "
+           //     + Suplementos.Producto + " - $"
+           //     + Convert.ToString(Suplementos.Precio) + "\r\n";
+            if (Suplementos.Codigo != "")
+            {
+                lblError.Text = Suplementos.Codigo + " - "
                 + Suplementos.Producto + " - $"
                 + Convert.ToString(Suplementos.Precio) + "\r\n";
+            }
+            else
+            {
+                lblError.Text = "No existe ese producto o error en el codigo";
+            }
+
         }
     }
 }

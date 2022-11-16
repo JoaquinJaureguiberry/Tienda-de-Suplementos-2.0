@@ -101,8 +101,13 @@ namespace BackEnd
                 {
                     suplemento.Codigo = (string)DT.Rows[i]["Codigo"];
                     suplemento.Producto = (string)DT.Rows[i]["Producto"];
-                    suplemento.Precio = (int)DT.Rows[i]["Precio"];
+                    suplemento.Precio = Convert.ToInt16(DT.Rows[i]["Precio"]);
                     break;
+                }
+
+                if (i == DT.Rows.Count - 1)
+                {
+                    suplemento.Codigo = "";
                 }
             }
 
