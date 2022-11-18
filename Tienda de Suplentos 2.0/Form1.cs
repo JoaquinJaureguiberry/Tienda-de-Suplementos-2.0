@@ -30,19 +30,28 @@ namespace Tienda_de_Suplentos_2._0
         {
             if (txtCodigo.Text != "" && txtProducto.Text != "" && txtPrecio.Text != "")
             {
-                if (int.TryParse(txtPrecio.Text,out int n))
+                Suplemento suplemento = Lista.Buscar(txtCodigo.Text);
+                if (txtCodigo.Text == suplemento.Codigo)
                 {
-                    Lista.Agregar(txtCodigo.Text, txtProducto.Text, txtPrecio.Text);
-                    lblError.Text = "El dato del Codigo " + txtCodigo.Text + " se cargo correctamente.";
-                    txtProducto.Text = "";
-                    txtPrecio.Text = "";
-                    txtCodigo.Text = "";
-                    txtCodigo.Focus();
+                    lblError.Text = "El Producto ya esta cargado";
                 }
                 else
                 {
-                    lblError.Text = "El campo -Precio- no es un numero entero.";
-                }               
+                    if (int.TryParse(txtPrecio.Text, out int n))
+                    {
+                        Lista.Agregar(txtCodigo.Text, txtProducto.Text, txtPrecio.Text);
+                        lblError.Text = "El dato del Codigo " + txtCodigo.Text + " se cargo correctamente.";
+                        txtProducto.Text = "";
+                        txtPrecio.Text = "";
+                        txtCodigo.Text = "";
+                        txtCodigo.Focus();
+                    }
+                    else
+                    {
+                        lblError.Text = "El campo -Precio- no es un numero entero.";
+                    }
+                }
+                             
             }
             else
             {
@@ -63,9 +72,7 @@ namespace Tienda_de_Suplentos_2._0
         private void btBuscar_Click(object sender, EventArgs e)
         {
             Suplemento Suplementos = Lista.Buscar(txtBuscar.Text);
-           // lblError.Text = Suplementos.Codigo + " - "
-           //     + Suplementos.Producto + " - $"
-           //     + Convert.ToString(Suplementos.Precio) + "\r\n";
+           
             if (Suplementos.Codigo != "")
             {
                 lblError.Text = Suplementos.Codigo + " - "
